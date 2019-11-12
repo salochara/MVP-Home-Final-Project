@@ -1,0 +1,51 @@
+<div class="phonepage">
+  <div class="swipecard">
+    <script src="sweetalert2.all.min.js"></script>
+    <div class="user-img-swipe">
+      <%= image_tag (@user.facebook_picture_url) %>
+    </div>
+    <div class="info">
+      <div class="name-header">
+        <% if @user.full_name.length <= 10 %>
+          <h1><%= @user.full_name %></h1>
+        <% else %>
+          <h3><%= @user.full_name %></h3>
+        <% end %>
+      </div>
+      <div class="row_cuisines">
+        <div class="chef">
+          <%= image_tag("chef.png") %>
+        </div>
+        <div class="cuisines-list tags">
+          <% @user.cuisine_list.each do |cuisine| %>
+            <span class="tag"><%= cuisine %></span>
+          <% end %>
+        </div>
+      </div>
+      <div class="row_interests">
+        <div class="smile-happy">
+          <%= image_tag("happiness.png") %>
+        </div>
+        <div class="interest-list tags">
+          <p><% @user.interest_list.each do |interest| %>
+              <span class="tag"><%= interest.capitalize %></span>
+            <% end %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="target-hide-icon-navbar"></div>
+  <div class="like">
+    <%= link_to matching_user_path(id: @user.id), method: :post, class: "navbar-wagon-brand" do %>
+      <%= image_tag "heart.png" %>
+    <% end %>
+  </div>
+  <div class="dislike">
+    <%= link_to matching_user_path(id: @user.id), method: :post, class: "navbar-wagon-brand" do %>
+      <%= image_tag "cancel.png" %>
+    <% end %>
+  </div>
+</div>
+<% if params["match"] == "matches" %>
+  <div id="sweet-alert-target" value= <%= params["name"] %>></div>
+<% end %>

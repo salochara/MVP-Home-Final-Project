@@ -1,0 +1,22 @@
+<div class="navbar-wagon">
+  <% if user_signed_in? %>
+    <div class="profile-icon">
+      <%= link_to edit_user_path(current_user), class: "navbar-wagon-brand" do %>
+        <%= image_tag "user-grey.png", height: 50 %>
+      <% end %>
+    </div>
+    <div class="matching-icon">
+      <!-- current_user.nearbys.sample(1)  commented out for demo-->
+      <%= link_to user_path(User.all_except(current_user).sample), class: "navbar-wagon-brand" do %>
+        <%= image_tag "fork.png", height: 50 %>
+      <% end %>
+    </div>
+    <div class="paper-plane-icon">
+      <%= link_to chat_rooms_path, class: "navbar-wagon-brand" do %>
+        <%= image_tag "chat.png", height: 50 %>
+      <% end %>
+    </div>
+  <% else %>
+    <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+  <% end %>
+</div>

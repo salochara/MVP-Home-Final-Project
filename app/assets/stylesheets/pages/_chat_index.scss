@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans');
+.phonepage-chat-index {
+    display: flex;
+    position: relative;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100vw;
+    background-image: asset-url("back2.png");
+    color: #black;
+    background-size: cover;
+}
+
+.header-matches {
+   color: white;
+    text-align: center;
+    right: 25%;
+    top: 5%;
+    height: 10%;
+    text-decoration: bold;
+    margin: 15px 0px;
+    right: 13%;
+    width: 100%;
+
+  h1{
+    font-weight: 800;
+        left: 10%;
+    position: absolute;
+  }
+
+
+}
+.match-chats {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gold-text {
+    color:#c3a343;
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 26px;
+    -webkit-text-fill-color: transparent;
+    background: -webkit-linear-gradient(transparent, transparent),
+    url(https://i.imgur.com/XKq0iHI.png) repeat;
+    background: -o-linear-gradient(transparent, transparent);
+    -webkit-background-clip: text;
+}
+
+.match-card {
+  background-color: white;
+  width: 80%;
+  height: 100px;
+  margin: 10px 0px;
+  display: flex;
+  border-radius: 4px;
+  box-shadow:   1px 1px 4px 1px #c2c2c2;
+}
+
+.user-avatar{
+  text-align: center;
+}
+
+.match-message-card{
+  display: flex;
+  flex-direction: column;
+}
+
+.avatar-chat {
+    height: 100PX;
+    border-radius: 50%;
+    width: 100px;
+    padding: 5px;
+}
+.match-message-name{
+  height: 25%;
+  margin-top: 3px;
+  a{
+    color: black;
+    font-weight: 800;
+  }
+}
+
+.match-message-content{
+  height: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0px 3px;
+}
+.name-chat{
+  color: black;
+}
+

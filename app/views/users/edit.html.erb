@@ -1,0 +1,61 @@
+<div class="phonepage">
+  <div class="swipecard-edit">
+    <div class="user-img-swipe">
+
+      <% if current_user.facebook_picture_url.nil? %>
+        <% current_user.facebook_picture_url = "https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/01/wallpaper-for-facebook-profile-photo.jpg"%>
+      <% end  %>
+      <%= image_tag (current_user.facebook_picture_url) %>
+    </div>
+    <div class="info-edit">
+      <div class="name-header">
+        <% if current_user.full_name.length <= 10 %>
+          <h1><%= current_user.full_name %></h1>
+        <% else %>
+          <h3><%= current_user.full_name %></h3>
+        <% end %>
+      </div>
+      <div class="row_cuisines">
+        <div class="chef">
+          <%= image_tag("chef.png") %>
+        </div>
+        <div class="cuisines-list tags">
+          <% current_user.cuisine_list.each do |cuisine| %>
+            <span class="tag"><%= cuisine %></span>
+          <% end %>
+        </div>
+      </div>
+      <div class="row_interests">
+        <div class="smile-happy">
+          <%= image_tag("happiness.png") %>
+        </div>
+        <div class="interest-list tags">
+          <p><% current_user.interest_list.each do |interest| %>
+              <span class="tag"><%= interest %></span>
+            <% end %></p>
+        </div>
+      </div>
+      <div class="row_restrictions">
+        <div class="gluten-free">
+          <%= image_tag("gluten-free.png") %>
+        </div>
+        <div class="restriction-list tags">
+          <% current_user.restriction_list.each do |restriciton| %>
+            <span class="tag"><%= restriciton %></span>
+          <% end %>
+        </div>
+      </div>
+      <div class="edit-bio custom-scrollbar">
+        <h5>Your biography:</h5>
+        <p><%= current_user.bio %></p>
+      </div>
+    </div>
+  </div>
+  <div class="sign-out">
+    <%= link_to destroy_user_session_path, method: :delete do %>
+      <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+      <%= link_to "Destroy", destroy_user_path(@user), method: :delete, data: { confirm: "You sure?" } %>
+    <% end %>
+  </div>
+</div>
+<!--  -->

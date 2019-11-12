@@ -1,0 +1,35 @@
+<div class="phonepage-chat-index">
+  <div class="header-matches">
+    <h1>Messages</h1>
+  </div>
+  <div class="match-chats">
+    <% if @my_chats.size > 0 %>
+      <% @my_chats.each do |chat| %>
+        <div class="match-card">
+          <div class= "user-avatar">
+            <% if chat.match.user1 != current_user %>
+              <%= image_tag chat.match.user1.facebook_picture_url, class:"avatar-chat" %>
+            <% else %>
+              <%= image_tag chat.match.user2.facebook_picture_url ,class:"avatar-chat" %>
+            <% end %>
+          </div>
+          <div class="match-message-card">
+            <div class="match-message-name">
+              <% if chat.match.user1 != current_user %>
+                <%= link_to chat.match.user1.first_name, chat_room_path(chat) %>
+              <% else %>
+                <%= link_to chat.match.user2.first_name, chat_room_path(chat) %>
+              <% end %>
+            </div>
+            <div class="match-message-content">
+              <%= chat.messages.empty? ? "No messages yet!" : chat.messages.last.content %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <p> You have no matches yet</p>
+    <% end %>
+  </div>
+</div>
+<h1 class="gold-text">The Blog Market</h1>

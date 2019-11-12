@@ -1,0 +1,14 @@
+{
+  "name": "MVP-Home",
+  "private": true,
+  "dependencies": {
+    "@rails/webpacker": "3.5",
+    "bootstrap": "3",
+    "jquery": "^3.3.1",
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^7.30.0"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "2.11.2"
+  }
+}

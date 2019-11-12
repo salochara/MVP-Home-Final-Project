@@ -1,0 +1,18 @@
+<div class="phonepage-white">
+  <div class="card-edit-page">
+    <div class="part1-bar"></div>
+    <div class="part2"></div>
+    <div class="welcome">
+      <h1>Welcome</h1>
+    </div>
+    <div class="welcome-message">
+      <!--      <p>Lets build your profile so others know who you are!</p> -->
+    </div>
+    <div class="welcome-profile-pic">
+      <%= image_tag (current_user.facebook_picture_url) %>
+    </div>
+    <div class="get-started">
+      <%= link_to 'Next', registration_cuisines_path %>
+    </div>
+  </div>
+</div>

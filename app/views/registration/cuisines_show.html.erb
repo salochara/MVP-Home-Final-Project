@@ -1,0 +1,16 @@
+<div class="phonepage-list-show">
+  <div class="part1-bar"></div>
+  <div class="part2-1"></div>
+  <div class="form-cuisine">
+    <div class="list-form-edit">
+      <h3> What type of cuisine do you like?</h3>
+      <br>
+      <%= simple_form_for @user, url: registration_cuisines_edit_path, method: :post do |f| %>
+        <%= f.input :cuisine_list, as:  :check_boxes, collection: User::CUISINES %>
+      </div>
+    </div>
+    <div class="submit-form-edit">
+      <%= f.submit "Next", class: "next" %>
+    </div>
+  <% end %>
+</div>

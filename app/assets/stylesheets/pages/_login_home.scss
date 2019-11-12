@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+@import url('https://fonts.googleapis.com/css?family=Homemade+Apple');
+@import url('https://fonts.googleapis.com/css?family=Poiret+One|Shadows+Into+Light');
+.phone-page-home {
+  display: flex;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-image: asset-url("cooking1.jpg");
+  color: black;
+  background-size: cover;
+}
+
+.logo-gold {
+    position: absolute;
+    top: 21%;
+    left: 18%;
+h1{
+    font-family: 'Poiret One', cursive;
+    font-size: 66px;
+}
+
+}
+
+
+.logo-gold img {
+    position: absolute;
+    height: 20%;
+    top: 17%;
+    left: 26%;
+
+}
+.tagline {
+      position: absolute;
+    left: 10%;
+    right: 10%;
+    top: 7%;
+  h3 {
+    font-size: 26px;
+    color: #D3AE43;
+    text-align: center;
+    font-weight: 500;
+  }
+}
+
+.fb-login {
+    position: absolute;
+    top: 44%;
+    left: 12%;
+    img:hover {
+      box-shadow: 5px 10px 40px rgba(0,0,0,.2);
+    }
+}
+
+

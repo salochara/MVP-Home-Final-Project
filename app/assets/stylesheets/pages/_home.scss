@@ -1,0 +1,10 @@
+// Specific CSS for your home-page
+.phonepage-home {
+ display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-image: asset-url("marble-b.jpg");
+  color: #black;
+  background-size: cover;
+  font-family: Raleway;
+}

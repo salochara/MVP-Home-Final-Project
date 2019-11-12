@@ -1,0 +1,16 @@
+<div class="phonepage-list-show">
+  <div class="part1-bar"></div>
+  <div class="part2-2"></div>
+  <div class="form-cuisine">
+    <div class="list-form-edit">
+      <h3> What do you like to do?</h3>
+      <br>
+      <%= simple_form_for @user, url: registration_interests_edit_path, method: :post do |f| %>
+        <%= f.input :interest_list, as: :check_boxes, collection: User::INTERESTS%>
+      </div>
+    </div>
+    <div class="submit-form-edit btn">
+      <%= f.submit "Next", class: "next" %>
+    </div>
+  <% end %>
+</div>

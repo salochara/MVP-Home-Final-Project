@@ -1,0 +1,11 @@
+<div class="phone-page-registration-completed">
+  <div class="welcome-message">
+    <h1>Let's build connections through food</h1>
+  </div>
+  <div class="button-start-swiping">
+    <%= simple_form_for :search, url:  location_set_user_path(current_user), method: :post do |f| %>
+      <%= f.input :query, as: :hidden %>
+      <%= f.submit "Get started!", class: "swiping" %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="phone-page-message">
+  <%= link_to ' ← Back', chat_rooms_path, class: "btn-chat" %>
+  <!--  -->
+  <div class="container chatting">
+    <div class="row-chat">
+      <div class="col-sm-6 col-sm-offset-3">
+        <div class="chat-header" id= "target-for-recipe">
+          <% if @chat_room.match.user1 != current_user %>
+            <h4> <%= @chat_room.match.user1.first_name %></h4>
+          <% else %>
+            <h4> <%= @chat_room.match.user2.first_name %></h4>
+          <% end %>
+        </div>
+        <div id="recipe-slider">
+          <h4>  ↓ Recipe</h4>
+        </div>
+        <div id="recipe-content" class="recipe-dropdown-content recipe-bar-block recipe-border">
+          <div class="recipe-image">
+            <%= image_tag(@recipe.image_url) %>
+          </div>
+          <div class="dark-overlay"></div>
+          <div class="recipe-name">
+            <p> <%= link_to @recipe.name, @recipe.url %></p>
+          </div>
+        </div>
+        <div class="messages">
+          <% @chat_room.messages.each do |message| %>
+            <%= render "messages/message", message: message, user_is_messages_author: message.user == current_user %>
+          <% end %>
+        </div>
+        <div id="create-message">
+          <%= simple_form_for [ @chat_room, Message.new ], remote: true, html: {autocomplete: "off" } do |f| %>
+            <%= f.input :content, label: false %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% content_for :after_js do %>
+    <script>
+      scrollLastMessageIntoView();
+      App['chat_room_<%= @chat_room.id %>'] = App.cable.subscriptions.create({ channel: 'ChatRoomsChannel', chat_room_id: <%= @chat_room.id %> }, {
+        received: (data) => {
+          if (data.current_user_id !== <%= current_user.id %>) {
+            const messagesContainer = document.querySelector('.messages');
+            messagesContainer.insertAdjacentHTML('beforeend', data.message_partial);
+            scrollLastMessageIntoView();
+          }
+        }
+      })
+    </script>
+  <% end %>
+</div>

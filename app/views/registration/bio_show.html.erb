@@ -1,0 +1,17 @@
+<div class="phonepage-bio-show">
+  <div class="part1-bar"></div>
+  <div class="part2-3"></div>
+  <div class="bio-input">
+    <h3> What makes you you?</h3>
+    <%= simple_form_for @user, url: registration_bio_edit_path, method: :post do |f| %>
+      <%= f.input :bio, as: :text %>
+    </div>
+    <div class="restriction-form">
+      <h3> Dietary restrictions?</h3>
+      <%= f.input :restriction_list, as: :check_boxes, collection: User::RESTRICTIONS %>
+    </div>
+    <div class="complete-sign-up">
+      <%= f.submit "Complete!", class: "complete"%>
+    </div>
+  <% end %>
+</div>

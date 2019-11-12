@@ -1,0 +1,149 @@
+.phone-page-message {
+    display: flex;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-image: asset-url("back2.png");
+    color: #black;
+    background-size: cover;
+  }
+
+.chatting{
+    /* margin-right: auto; */
+    /* margin-left: auto; */
+    /* padding-left: 15px; */
+    /* padding-right: 15px; */
+    margin-top: 21%;
+    width: 80vw;
+    height: 80vh;
+  }
+.messages {
+    font-size: 14px;
+    color: #868686;
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #ececec;
+    border-top: none;
+    border-bottom-width: 0;
+    height: 542px;
+    max-height: calc(100vh);
+    overflow: scroll;
+}
+.message {
+  display: flex;
+  margin-bottom: 10px;
+  &.right {
+    flex-direction: row-reverse;
+    .message-content {
+      background-color: #F2F9FC;
+    }
+  }
+}
+
+
+.row-chat {
+    margin-left: -15px;
+    margin-right: -15px;
+    background: white;
+    border-radius: 10px;
+    padding-bottom: 0.5px;
+    box-shadow: 5px 5px 20px 1px #c2c2c2;
+}
+
+
+.message-content {
+  background-color: #F7F7F7;
+  border-radius: 3px;
+  margin: 0 10px;
+  padding: 11px 10px 8px 10px;
+}
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+#create-message {
+  padding: 10px;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  border: 1px solid #ececec;
+
+}
+.message_content {
+  margin-bottom: 0;
+}
+input.form-control {
+  border: 1px solid #ECECEC;
+  box-shadow: none;
+  font-size: 14px;
+  color: #868686;
+  &:focus {
+    outline: none;
+    border: 1px solid blue;
+    box-shadow: none;
+  }
+}
+.chat-header {
+    background-color: white;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid #f06460;
+  h4 {
+    margin: 0;
+    color: black;
+  }
+}
+
+.btn-chat{
+    top: 24px;
+    position: absolute;
+    left: 40px;
+    background-color: white;
+    border-color: #f06460;
+    color: #f06460;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+.btn-chat:active {
+  background-color: white !important;
+  opacity: 0;
+  border: 1px solid white !important;
+}
+
+// .recipe-card {
+//   position: absolute;
+//     border-style: solid;
+//     border-color: #D3AE43;
+//     background: rgba(255, 255, 255, 0.5);
+//     text-align: center;
+//     left: 10%;
+//     top: 10%;
+//     bottom: 60%;
+//     /* display: inline-flex; */
+//     right: 10%;
+// }
+
+// .recipe-image img{
+//     height: 150px;
+//     width: 200px;
+//     margin-top: 20px;
+// }
+
+// .recipe-name  {
+//     position: absolute;
+//     left: 15%;
+//     right: 15%;
+// p{
+//   font-size: 17px;
+//   margin-top: 9px;
+// }
+
+//   a{
+//     color: black;
+//     font-weight: 600;
+//   }
+// }

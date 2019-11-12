@@ -1,0 +1,85 @@
+.phone-page-registration-completed {
+    display: flex;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-image: asset-url("kitchen4.jpg");
+    color: #black;
+    background-size: cover;
+}
+
+.welcome-message {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    text-align: center;
+    font-size: 37px;
+    width: 80%;
+    color: white;
+  h1 {
+    color: black;
+    font-weight: 500;
+    font-size: 44px;
+  }
+}
+.button-start-swiping {
+    //     /* right: auto; */
+    // position: absolute;
+    // background: white;
+    // top: 60%;
+    // left: 23%;
+    // padding: 15px;
+    // background: #D3AE43;
+    // color: white;
+    // font-weight: 600;
+}
+
+.content-registration-completed {
+    position: absolute;
+    // border-style: solid;
+    // border-color: #D3AE43;
+    // background: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    // border: 2px solid #D3AE43;
+    // top: 25%;
+    // left: 10%;
+    // right: 10%;
+    // bottom: 35%;
+}
+
+.swiping {
+    position: absolute;
+    background: white;
+    top: 40%;
+    left: 24%;
+    right: 14%;
+    padding: 19px;
+    background: #F06460;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    border: none;
+}
+
+.swiping:hover {
+  box-shadow: 5px 10px 40px rgba(0,0,0,.2);
+}
+
+.images-swipe {
+  position: absolute;
+  bottom: 3%;
+  left: 10%;
+  img {
+    height: 160px;
+
+  }
+
+}
+
+ input.swiping {
+  font-size: 25px;
+}
+
+
+
+
